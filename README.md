@@ -1,11 +1,11 @@
 # Modular Electrochromic Polyester (MEP) Color Targeting
 
-Python tools for predicting and targeting colors obtained from blends of modular electrochromic polyesters (MEPs) using the CIE 1976 L*a*b* (CIELAB) color space.
+Python tools for predicting and targeting colors obtained from blends of modular electrochromic polyesters (MEPs) using the CIE 1976 L* a* b* (CIELAB) color space.
 
 
 Core capabilities:
 
-- Convert experimental transmission spectra of MEP devices into L*a*b* coordinates.
+- Convert experimental transmission spectra of MEP devices into L* a* b* coordinates.
 - Predict colors from mixtures of two MEPs using linear interpolation of spectra in CIELAB space.
 - Predict colors from mixtures of three MEPs using barycentric coordinates in the a*–b* plane.
 - Compute ΔE color differences between predicted mixtures and a user-defined target color.
@@ -23,7 +23,7 @@ MEPs are electrochromic polyesters built from aromatic ester macromonomers (e.g.
 
 In the reduced state, blends of MEPs behave approximately linearly in CIELAB space: the color of a blend lies along (2 MEPs) or inside (3 MEPs) the convex hull spanned by the individual MEP colors. This makes them ideal for model-based color targeting instead of brute-force experimental screening.
 
-All color calculations are performed in CIE 1976 L*a*b*:
+All color calculations are performed in CIE 1976 L* a* b*:
 
 - L* – lightness (0 = black, 100 = white)
 - a* – green (−) to red (+)
@@ -31,7 +31,7 @@ All color calculations are performed in CIE 1976 L*a*b*:
 
 Color differences are quantified using the CIE76 metric:
 
-Delta E = sqrt{(L_2^* - L_1^*)^2 + (a_2^* - a_1^*)^2 + (b_2^* - b_1^*)^2}
+Delta E = sqrt{(L_2* - L_1*)^2 + (a_2* - a_1*)^2 + (b_2* - b_1*)^2}
 
 ---
 
@@ -65,7 +65,7 @@ with
 
 lambda_A + lambda_B + lambda_C = 1 and lambda_i >= 0 for all i.
 
-The weights directly correspond to the blend ratio of each MEP. In the current implementation, the targeting is carried out in the a*–b* plane (hue). The same framework naturally extends to four MEPs in full 3D Lab* space (tetrahedral barycentric coordinates) if one wishes to incorporate the L* axis in the targeting.
+The weights directly correspond to the blend ratio of each MEP. In the current implementation, the targeting is carried out in the a*–b* plane (hue). The same framework naturally extends to four MEPs in full 3D L* a* b* space (tetrahedral barycentric coordinates) if one wishes to incorporate the L* axis in the targeting.
 
 ---
 
